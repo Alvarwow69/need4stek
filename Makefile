@@ -18,7 +18,11 @@ SRC	=	src/main.c							\
         src/utils/search_match.c			\
         src/utils/my_str_len.c				\
         src/utils/compare.c					\
-        src/utils/my_put_nbr.c
+        src/utils/my_put_nbr.c				\
+        src/request/info.c					\
+        src/request/cycle.c					\
+        src/request/move.c					\
+        src/request/simulation.c
 
 OBJ	=	$(SRC:.c=.o)
 

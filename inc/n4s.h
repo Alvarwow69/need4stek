@@ -12,6 +12,18 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+//AI
+char *start_sim(void);
+char *stop_sim(void);
+char *forward(float speed);
+char *backward(float speed);
+char *turn(float value);
+char *get_lidar_info(void);
+char *cycle(int nbr_cycle);
+char *get_time(void);
+
+
+//utils
 int my_put_str(char *str, int channel);
 char *clean_str(char *str);
 char *my_str_dup(char const *src);

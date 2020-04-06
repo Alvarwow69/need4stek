@@ -7,63 +7,6 @@
 
 #include "n4s.h"
 
-char *start_sim(void)
-{
-    char *buffer = NULL;
-    size_t size = 0;
-
-    my_put_str("start_simulation\n", 1);
-    getline(&buffer, &size, stdin);
-    return (buffer);
-}
-
-char *cycle(int nbr_cycle)
-{
-    char *buffer = NULL;
-    size_t size = 0;
-
-    my_put_str("CYCLE_WAIT:", 1);
-    my_put_nbr(nbr_cycle);
-    my_put_str("\n", 1);
-    getline(&buffer, &size, stdin);
-    return (buffer);
-}
-
-char *stop_sim(void)
-{
-    char *buffer = NULL;
-    size_t size = 0;
-
-    my_put_str("stop_simulation\n", 1);
-    getline(&buffer, &size, stdin);
-    return (buffer);
-}
-
-char *forward(float speed)
-{
-    char *buffer = NULL;
-    char sp[5];
-    size_t size = 0;
-
-    if (speed < 0 || speed > 1)
-        return (NULL);
-    my_put_str("car_forward:", 1);
-    my_put_str(gcvt(speed, 2, sp), 1);
-    my_put_str("\n", 1);
-    getline(&buffer, &size, stdin);
-    return (buffer);
-}
-
-char *get_lidar_info(void)
-{
-    char *buffer = NULL;
-    size_t size = 0;
-
-    my_put_str("get_info_lidar\n", 1);
-    getline(&buffer, &size, stdin);
-    return (buffer);
-}
-
 void reach_position()
 {
     char *info = NULL;
@@ -84,9 +27,6 @@ void reach_position()
 
 int main(void)
 {
-    char *buffer = NULL;
-    size_t size = 0;
-
     my_put_str(start_sim(), 2);
     my_put_str(forward(0.2f), 2);
     reach_position();
